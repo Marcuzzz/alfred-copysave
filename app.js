@@ -1,7 +1,7 @@
 import clipboardy from 'clipboardy';
 
 // Define the regex pattern
-const regex = /(secret|token|clientSecret|client)(?!.*token_uri|clientId|client_uri)\s*['"]?\s*[:=]\s*['"]?(.*?)(['"]?\s*,|\n|$)/gm;
+const regex = /(secret|token|clientSecret|client|clientId|project_id)(?!.*token_uri|client_uri)\s*['"]?\s*[:=]\s*['"]?(.*?)(['"]?\s*,|\n|$)/gm;
 
 function replacer(line, option) {
     return line.replace(regex, (match, key, value, ending) => {
